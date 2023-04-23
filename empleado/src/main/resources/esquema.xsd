@@ -9,10 +9,9 @@
             <xs:sequence>
                 <xs:element name="numeroTrabajador" type="xs:string" />
                 <xs:element name="nombre" type="xs:string" />
-                <xs:element name="ApellidoP" type="xs:string" />
-                <xs:element name="ApellidoM" type="xs:string" />
+                <xs:element name="apellidoP" type="xs:string" />
+                <xs:element name="apellidoM" type="xs:string" />
                 <xs:element name="telefono" type="xs:string" />
-                <xs:element name="contraseña" type="xs:string" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -21,22 +20,6 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="resultado" type="xs:string" />
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="BuscarEmpleadoRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:int" />
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="BuscarEmpleadoResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="respuesta" type="xs:string" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -56,5 +39,45 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:element name="BuscarEmpleadoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numeroTrabajador" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BuscarEmpleadoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string" />
+                <xs:element name="apellidoP" type="xs:string" />
+                <xs:element name="apellidoM" type="xs:string" />
+                <xs:element name="telefono" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="EditarEmpleadoPorNombreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string" />
+                <xs:element name="numeroTrabajador" type="xs:string" />
+                <xs:element name="apellidoP" type="xs:string" />
+                <xs:element name="apellidoM" type="xs:string" />
+                <xs:element name="telefono" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="EditarEmpleadoPorNombreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultado" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 
 </xs:schema>

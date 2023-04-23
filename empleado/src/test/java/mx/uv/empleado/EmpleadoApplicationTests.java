@@ -1,10 +1,10 @@
-package mx.uv.licoreria;
+package mx.uv.empleado;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LicoreriaApplicationTests {
+class EmpleadoApplicationTests {
 
 	@Test
 	void contextLoads() {

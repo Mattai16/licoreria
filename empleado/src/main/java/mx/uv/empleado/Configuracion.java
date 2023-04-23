@@ -1,4 +1,5 @@
-package mx.uv.licoreria;
+package mx.uv.empleado;
+
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +14,10 @@ import org.springframework.xml.xsd.XsdSchema;
 
 @EnableWs
 @Configuration
-public class Config extends WsConfigurerAdapter{
+public class Configuracion extends WsConfigurerAdapter{
+    
     @Bean
-    public XsdSchema LicoreriaSchema(){
+    public XsdSchema licoreriaSchema(){
         return new SimpleXsdSchema(new ClassPathResource("esquema.xsd"));
     }
     
@@ -26,13 +28,13 @@ public class Config extends WsConfigurerAdapter{
         return new ServletRegistrationBean<>(servlet, "/ws/*");
     }
 
-    @Bean(name = "cafeteria")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema saludosSchema) {
+    @Bean(name = "empleado")
+    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema licoreriaSchema) {
         DefaultWsdl11Definition wsdl = new DefaultWsdl11Definition();
-        wsdl.setPortTypeName("LicoreriaPort");        
+        wsdl.setPortTypeName("empleadoPort");        
         wsdl.setLocationUri("/ws");   
-        wsdl.setTargetNamespace("https://t4is.uv.mx/productos");        
-        wsdl.setSchema(saludosSchema);
+        wsdl.setTargetNamespace("https://t4is.uv.mx/empleados");        
+        wsdl.setSchema(licoreriaSchema);
         return wsdl;
     }
 }
